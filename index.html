@@ -5,21 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>morse</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,300,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/auto.css">
+    <link rel="stylesheet" href="css/phone.css">
 </head>
 <body>
-    <h1 class="title">Morse translator.</h1>
-    <h3 class="smallTitle">Przełumacz z morse’a na string lub  ze stingu na mose’a.</h3>
-    <br>
-    <button class="smallBtn" id="translate">Tłymacz</button>
-    <button class="smallBtn"id="code">Szyfrój</button>
-    <h4 class="inputIndex">Wpisz tekst </h4>
-    <input type="text" class="input">
-    <p></p>
-    <input class="readyText" id="text">
-    <button class="btn copyBtn" data-clipboard-target="#text" data-clipboard-action="copy">Kopiuj</button>
+    <div class="upperDiv rowHalf">
+        <div class="upperDiv___header">
+
+            <h1 class="title ">Naucz się morsa w 10<br> min dziennie</h1>
+            <h3 class="longText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam venenatis metus. </h3>
+            <a class="purpleBtn" href="#about">Zaczynynamy!</a>
+
+        </div>
+    </div> 
+    <div class="aboutDiv rowHalf" id="about">
+
+        <div class="aboutDiv___img d-xs-none"></div>
+
+        <div class="aboutDiv___textDiv">
+
+            <h2 class="title"> Jak to działa?</h2>
+            <h4 class="longText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam venenatis metus.</h4>
+            <a class="purpleBtn" href="#endBox">Czytaj Dalej</a>
+
+        </div>
+
+
+    </div>
+    <div class="full-vw endBox" id="endBox">
+        <h2 class="title">To co?</h2>
+        <a class="purpleBtn" href="questions.html">Zaczynynamy!</a>
+
+    </div>
     <script src="main.js"></script>
-    <script src="dist/clipboard.min.js"></script>
 </body>
 </html>

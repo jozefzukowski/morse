@@ -1,336 +1,112 @@
-let clicked = 0;
-document.querySelector('#translate').addEventListener('click', function(){
-    document.querySelector('.startBtn').addEventListener('click', function(){
-        alert('hefoshaofd')
-    })
-})
-document.querySelector('#code').addEventListener('click', function(){
-    document.querySelector('.startBtn').addEventListener('click', function(){
-        alert('hefoshaofd')
-    })
-})
-/* 
-document.querySelector('.startBtn').addEventListener('click', function(){
+   /* tworzenie classy pytanie */
+   class question {
+        constructor(content, answer, checkbox) {
+            this.content = content;
+            this.answer = answer;
+            this.checkbox = checkbox
+        }
+    }
+    
+    /* tworzenie tablicy pytanie i jej defniowanei za pomoca kalasy pytanie */
 
-    if(clicked == 1){
-        alert('helofdohsafdd');
-    }
-    else{
-        alert('helofdohsafdd');
-    }
+    const questions = new Array(26);
+
+    questions[0] = new question("Jak napiać  A", ".-");
+    questions[1] = new question("Jak napisać B", "-...");
+    questions[2] = new question("Jak napiać C", ".-.-");
+    questions[3] = new question("Jak napiać  D", "-..");
+    questions[4] = new question("Jak napisać E", ".");
+    questions[5] = new question("Jak napiać F", "..-.");
+    questions[6] = new question("Jak napiać  G", "--.");
+    questions[7] = new question("Jak napisać H", "....");
+    questions[8] = new question("Jak napiać I", "..");
+    questions[9] = new question("Jak napiać  J", ".---");
+    questions[10] = new question("Jak napisać K", "-.-");
+    questions[11] = new question("Jak napiać L", ".-..");
+    questions[12] = new question("Jak napisać M", "..");
+    questions[13] = new question("Jak napiać N", "-.");
+    questions[14] = new question("Jak napisać O", "---");
+    questions[15] = new question("Jak napiać P", ".--.");
+    questions[16] = new question("Jak napisać Q", "--.-");
+    questions[17] = new question("Jak napiać R", ".-.");
+    questions[18] = new question("Jak napisać S", "...");
+    questions[19] = new question("Jak napiać T", "-");
+    questions[20] = new question("Jak napiać U", "..-");
+    questions[21] = new question("Jak napisać V", "...-");
+    questions[22] = new question("Jak napiać W", ".--");
+    questions[23] = new question("Jak napisać X", "-..- ");
+    questions[24] = new question("Jak napiać Y", "-.--");
+    questions[25] = new question("Jak napisać Z", "--..");
+    questions[26] = new question("Czy koniec słowa //", 1, true);
+    questions[27] = new question("Jak napiać W", ".--");
+    questions[28] = new question("Czy medldunek rozpoczyna się ///", 1, true);
+    questions[29] = new question("Jak napiać Y", "-.--");
+    questions[30] = new question("Jak napisać Z", "--..");
+
+ 
+
+    /* tworzenie uchwyów dla ementów pytanie i textinput */
+    const questionHtml = document.querySelector('#question');
+
+    
+    let points = 0;
+
+
+    /* nasuchiwanie na clikniecie na przycisk */
+        document.querySelector('#startBtn').addEventListener('click', function(){
+
+            const input = document.querySelector('.textInput').value;
+
+            if(input == questions[number].answer){
+                points++;
+                document.querySelector('.textInput').classList.remove('bad')
+
+                good();
+
+
+            }
+            else{
+                bad();
+            }
+            repeat ++;
+            if(repeat > getRepeat){
+                end();
+            }
+           question();
+
+        });
+
+
+
+function bad(){
+    const input = document.querySelector('.textInput');
+
+    input.style.animation = bad;
+
 }
- */
 
-
-
-document.querySelector('#code').addEventListener("click", function(){
-    var str = document.querySelector('.input').value;
-    var letters = str.split("");
-    var length = letters.length;
-    var readyStr = '//'
-
-    for(i = 0; i <= length; i++){
-
-        switch(letters[i]){
-            case 'a':
-            case 'ą':
-            case 'A':
-            case 'Ą':
-                readyStr = readyStr + '/.-'
-            break;
-            case 'b':
-            case 'B':
-                readyStr = readyStr + '/-...'
-            break;
-            case 'c':
-            case 'ć':
-            case 'Ć':
-            case 'C':
-                readyStr = readyStr + '/-.-.'
-            break;
-            case 'd':
-            case 'D':
-                readyStr = readyStr + '/-..'
-            break;
-            case 'e':
-            case 'E':
-            case 'ę':
-            case 'Ę':
-                readyStr = readyStr + '/.'
-            break;
-            case 'f':
-            case 'F':
-                readyStr = readyStr + '/..-.'
-            break;
-            case 'g':
-            case 'G':
-                readyStr = readyStr + '/--.'
-            break;
-            case 'H':
-            case 'h':
-                readyStr = readyStr + '/....'
-            break;
-            case 'i':
-            case 'I':
-                readyStr = readyStr + '/..'
-            break;
-            case 'J':
-            case 'j':
-                readyStr = readyStr + '/.---'
-            break;
-            case 'k':
-            case 'K':
-                readyStr = readyStr + '/-.-'
-            break;
-            case 'l':
-            case 'L':
-            case 'ł':
-            case 'Ł':
-                readyStr = readyStr + '/.-..'
-            break;
-            case 'm':
-            case 'M':
-                readyStr = readyStr + '/--'
-            break;
-            case 'n':
-            case 'N':
-            case 'ń':
-            case 'Ń':
-                readyStr = readyStr + '/-.'
-            break;
-            case 'o':
-            case 'O':
-            case 'ó':
-            case 'Ó':
-                readyStr = readyStr + '/---'
-            break;
-            case 'p':
-            case 'P':
-                readyStr = readyStr + '/.--.'
-            break;
-            case 'Q':
-            case 'q':
-                readyStr = readyStr + '/--.-'
-            break;
-            case 'R':
-            case 'r':
-                readyStr = readyStr + '/.-.'
-            break;
-            case 's':
-            case 'S':
-            case 'ś':
-            case 'Ś':
-                readyStr = readyStr + '/...'
-            break;
-            case 'T':
-            case 't':
-                readyStr = readyStr + '/-'
-            break;
-            case 'u':
-            case 'U':
-                readyStr = readyStr + '/..-'
-            break;
-            case 'v':
-            case 'V':
-                readyStr = readyStr + '/...-'
-            break;
-            case 'w':
-            case 'W':
-                readyStr = readyStr + '/.--'
-            break;
-            case 'x':
-            case 'X':
-                readyStr = readyStr + '/-..-'
-            break;
-            case 'z':
-            case 'Z':
-            case 'ż':
-            case 'Ż':
-            case 'ź':
-            case 'Ź':
-                readyStr = readyStr + '/--..'
-            break;
-            case 'y':
-            case 'Y':
-                readyStr = readyStr + '/-.--'
-            break;
-            case ' ':
-                readyStr = readyStr + '/'
-            break;
-
-            case '1':
-                readyStr = readyStr + '/.----'
-            break;
-            case '2':
-                readyStr = readyStr + '/..---'
-            break;
-            case '3':
-                readyStr = readyStr + '/...--'
-            break;
-            case '4':
-                readyStr = readyStr + '/....-'
-            break;
-            case '5':
-                readyStr = readyStr + '/.....'
-            break;
-            case '6':
-                readyStr = readyStr + '/-....'
-            break;
-            case '7':
-                readyStr = readyStr + '/--...'
-            break;
-            case '8':
-                readyStr = readyStr + '/---..'
-            break;
-            case '9':
-                readyStr = readyStr + '/----.'
-            break;
-            case '0':
-                readyStr = readyStr + '/-----'
-            break;
-        }
-
-    }
-    var textDiv = document.querySelector('.readyText');
-    textDiv.value = readyStr +'///';
-    document.querySelector('.copyBtn').addEventListener('click', function(){
-        
-        new ClipboardJS('.btn');
-    })
+function question(){
+    /* zmienne */
+    let number = Math.floor(Math.random()*questions.length); /* losowy numer pytania */
     
+    /* ustawianie nagłwka  */
+    questionHtml.innerHTML =  questions[number].content;
 
-})
+}
+/* funkcja end służy do wyświetlanie wyniku */
+function end(){
+    const mainDiv = document.querySelector('.mainDiv');
+    mainDiv.innerHTML = 0;
+    mainDiv.innerHTML = `<h1 class="title">Twój wynik : ${points}</h1>`
 
-document.querySelector('#translate').addEventListener("click", function(){
-    var str = document.querySelector('.input').value;
-    var letters = str.split("/");
-    var length = letters.length;
-    var readyStr = '';
+}
+/* funkcja służy do podśiwetlani na czerwono inputa */
+function bad(){
 
-    for(i = 0; i <= length; i++){
+    const input = document.querySelector('.textInput');
+    input.style.animation = bad;
 
-        switch(letters[i]){
-            case '.-':
-                readyStr = readyStr + 'a'
-            break;
-            case '-...':
-                readyStr = readyStr + 'b'
-            break;
-            case '-.-.':
-                readyStr = readyStr + 'c'
-            break;
-            case '-..':
-                readyStr = readyStr + 'd'
-            break;
-            case '.':
-                readyStr = readyStr + 'e'
-            break;
-            case '..-.':
-                readyStr = readyStr + 'f'
-            break;
-            case '--.':
-                readyStr = readyStr + 'g'
-            break;
-            case '....':
-                readyStr = readyStr + 'h'
-            break;
-            case '..':
-                readyStr = readyStr + 'i'
-            break;
-            case '.---':
-                readyStr = readyStr + 'j'
-            break;
-            case '-.-':
-                readyStr = readyStr + 'k'
-            break;
-            case '.-..':
-                readyStr = readyStr + 'l'
-            break;
-            case '--':
-                readyStr = readyStr + 'm'
-            break;
-            case '-.':
-                readyStr = readyStr + 'n'
-            break;
-            case '---':
-                readyStr = readyStr + 'o'
-            break;
-            case '.--.':
-                readyStr = readyStr + 'p'
-            break;
-            case '--.-':
-                readyStr = readyStr + 'q'
-            break;
-            case '.-.':
-                readyStr = readyStr + 'r'
-            break;
-            case '...':
-                readyStr = readyStr + 's'
-            break;
-            case '-':
-                readyStr = readyStr + 't'
-            break;
-            case '..-':
-                readyStr = readyStr + 'u'
-            break;
-            case '...-':
-                readyStr = readyStr + 'v'
-            break;
-            case '.--':
-                readyStr = readyStr + 'w'
-            break;
-            case '-..-':
-                readyStr = readyStr + 'x'
-            break;
-            case '--..':
-                readyStr = readyStr + 'z'
-            break;
-            case '-.--':
-                readyStr = readyStr + 'y'
-            break;
-            case ' ':
-                readyStr = readyStr + '  '
-            break;
+}
 
-            case '.----':
-                readyStr = readyStr + '1'
-            break;
-            case '..---':
-                readyStr = readyStr + '2'
-            break;
-            case '...--':
-                readyStr = readyStr + '3'
-            break;
-            case '....-':
-                readyStr = readyStr + '4'
-            break;
-            case '.....':
-                readyStr = readyStr + '5'
-            break;
-            case '-....':
-                readyStr = readyStr + '6'
-            break;
-            case '--...':
-                readyStr = readyStr + '7'
-            break;
-            case '---..':
-                readyStr = readyStr + '8'
-            break;
-            case '----.':
-                readyStr = readyStr + '9'
-            break;
-            case '-----':
-                readyStr = readyStr + '0'
-            break;
-        }
+/* <input type="text" placeholder="odpowowiedź" class="textInput"><br> */
 
-    }
-    var textDiv = document.querySelector('.readyText');
-    textDiv.value = readyStr +'///';
-    document.querySelector('.copyBtn').addEventListener('click', function(){
-        
-        new ClipboardJS('.btn');
-    })
-    
-
-})
